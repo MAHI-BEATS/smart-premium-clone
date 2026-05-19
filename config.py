@@ -61,10 +61,9 @@ API_KEY = getenv("API_KEY", "30DxNexGenBots5c0310") # youtube song api key, gene
 API2_URL = getenv("API2_URL", "https://shrutibots.site")
 # ----------------------------------------------------------------
 # ----------------------------------------------------------------
-SOURCE = getenv("SOURCE", "https://github.com/TEAMPURVI/SONALI_MUSIC")
 UPSTREAM_REPO = getenv(
     "UPSTREAM_REPO",
-    "https://github.com/iamnobita206243/NOBITA_CLONE_MUSIX",
+    "https://github.com/shivashish44/THE-SHIVclone",
 )
 UPSTREAM_BRANCH = getenv("UPSTREAM_BRANCH", "main")
 GIT_TOKEN = getenv(
@@ -139,24 +138,13 @@ confirmer = {}
 # ------------------------------------
 
 STREAMI_PICS = [
-"https://files.catbox.moe/4q7c4w.jpg",
-    "https://files.catbox.moe/90z6sq.jpg",
-    "https://files.catbox.moe/rdfi4z.jpg",
-    "https://files.catbox.moe/6f9rgp.jpg",
-    "https://files.catbox.moe/99wj12.jpg",
-    "https://files.catbox.moe/ezpnd2.jpg",
-    "https://files.catbox.moe/e7q55f.jpg",
-    "https://files.catbox.moe/qyfsi7.jpg",
-    "https://files.catbox.moe/kbke7s.jpg",
-    "https://files.catbox.moe/7icvpu.jpg",
-    "https://files.catbox.moe/4hd77z.jpg",
-    "https://files.catbox.moe/yn7wje.jpg",
-    "https://files.catbox.moe/kifsir.jpg",
-    "https://files.catbox.moe/zi21kc.jpg",
-    "https://files.catbox.moe/z0gh23.jpg",
-    "https://files.catbox.moe/f2s4ws.jpg",
-    "https://files.catbox.moe/26nzoq.jpg",
-    "https://files.catbox.moe/fu6jk3.jpg",
+"https://files.catbox.moe/49spk2.jpg",
+    "https://files.catbox.moe/fj3cfe.jpg",
+    "https://files.catbox.moe/fj3cfe.jpg",
+    "https://files.catbox.moe/7azd4u.jpg",
+    "https://files.catbox.moe/je87i5.jpg",
+    "https://files.catbox.moe/u4db8r.jpg",
+    "https://files.catbox.moe/ubyk6k.jpg",
 ]
 
 
