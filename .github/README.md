@@ -7,7 +7,7 @@
     ─「 ᴅᴇᴩʟᴏʏ ᴏɴ ʜᴇʀᴏᴋᴜ 」─
 </h3>
 
-<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/iamnobita206243/NOBITA_CLONE_MUSIX"> <img src="https://www.herokucdn.com/deploy/button.svg"></a></p>
+<p align="center"><a href="https://dashboard.heroku.com/new?template=https://github.com/shivashish44/THE-SHIVclone"> <img src="https://www.herokucdn.com/deploy/button.svg"></a></p>
 
 <br />
 
