@@ -2,7 +2,7 @@ import time
 import random
 import asyncio
 from pyrogram import filters, Client
-from pyrogram.enums import ChatType, ChatAction  # ChatAction को इम्पोर्ट किया गया
+from pyrogram.enums import ChatType, ChatAction
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from py_yt import VideosSearch
 
@@ -24,7 +24,7 @@ from Clonify.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS, START_IMG_URL
 from strings import get_string
 
-# Added CMBOT directly here to fix the config.py ImportError
+# Random Loading Messages
 CMBOT = [
     "✨ **ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ...**",
     "✨ **ʟᴏᴀᴅɪɴɢ... ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**",
@@ -40,10 +40,23 @@ EFFECT_ID = [
     5159385139981059251,
 ]
 
+# --- SAFE PHOTO HELPER ---
+# Prevents MongoDB from crashing the bot if it overwrites config.py
+def get_safe_photo(photo_url):
+    if isinstance(photo_url, list):
+        return random.choice(photo_url)
+    elif isinstance(photo_url, str):
+        if "," in photo_url:
+            return random.choice(photo_url.split(","))
+        return photo_url
+    return "https://files.catbox.moe/n22tbs.jpg"
+# -------------------------
+
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message, _):
 
+    # Loading Animation
     loading_1 = await message.reply_text(random.choice(CMBOT))
     await add_served_user(message.from_user.id)
     
@@ -66,9 +79,10 @@ async def start_pm(client, message: Message, _):
         if name[0:4] == "help":
             keyboard = help_pannel(_)
             await app.send_chat_action(message.chat.id, ChatAction.TYPING)
+            # Sticker Before Image in /start help
             await message.reply_sticker("CAACAgUAAxkBAAFJgZ1qBGwx9Z9vW5BhG3dw0l1A5j4CyQACXRYAAuc-wVWs4--9DGlDKzsE")
             return await message.reply_photo(
-                random.choice(START_IMG_URL),
+                get_safe_photo(START_IMG_URL),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
             )
@@ -119,8 +133,14 @@ async def start_pm(client, message: Message, _):
                 )
     else:
         out = private_panel(_)
+        await app.send_chat_action(message.chat.id, ChatAction.TYPING)
+        
+        # 👉 Yahan Sticker Send Hoga (Start Image se pehle)
+        await message.reply_sticker("CAACAgUAAxkBAAFJgZ1qBGwx9Z9vW5BhG3dw0l1A5j4CyQACXRYAAuc-wVWs4--9DGlDKzsE")
+        
+        # 👉 Uske baad Start Image Send Hogi
         await message.reply_photo(
-            random.choice(START_IMG_URL),
+            get_safe_photo(START_IMG_URL),
             message_effect_id=random.choice(EFFECT_ID),
             caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(out),
@@ -138,7 +158,7 @@ async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
     await message.reply_photo(
-        random.choice(START_IMG_URL),
+        get_safe_photo(START_IMG_URL),
         caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
