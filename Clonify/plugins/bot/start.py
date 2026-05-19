@@ -21,8 +21,16 @@ from Clonify.utils.database import (
 from Clonify.utils.decorators.language import LanguageStart
 from Clonify.utils.formatters import get_readable_time
 from Clonify.utils.inline import help_pannel, private_panel, start_panel
-from config import BANNED_USERS, START_IMG_URL, CMBOT
+from config import BANNED_USERS, START_IMG_URL
 from strings import get_string
+
+# Added CMBOT directly here to fix the config.py ImportError
+CMBOT = [
+    "✨ **ᴘʀᴏᴄᴇssɪɴɢ ʏᴏᴜʀ ʀᴇǫᴜᴇsᴛ...**",
+    "✨ **ʟᴏᴀᴅɪɴɢ... ᴘʟᴇᴀsᴇ ᴡᴀɪᴛ...**",
+    "✨ **ᴡᴀᴋɪɴɢ ᴜᴘ ᴛʜᴇ ʙᴏᴛ...**",
+    "✨ **ᴊᴜsᴛ ᴀ sᴇᴄᴏɴᴅ ʙᴀʙʏ...**"
+]
 
 # Telegram Message Effect IDs
 EFFECT_ID = [
