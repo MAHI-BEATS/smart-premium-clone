@@ -1,18 +1,16 @@
 import time
 import random
 import asyncio
-from pyrogram import filters
-from pyrogram.enums import ChatType
+from pyrogram import filters, Client
+from pyrogram.enums import ChatType, ChatAction  # ChatAction को इम्पोर्ट किया गया
 from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from py_yt import VideosSearch
 
 import config
-from Clonify import app
-from Clonify.misc import _boot_
-from Clonify.plugins.sudo.sudoers import sudoers_list
-from Clonify.utils.database import get_served_chats, get_served_users, get_sudoers
-from Clonify.utils import bot_sys_stats
-from Clonify.utils.database import (
+from PritiMusic import app
+from PritiMusic.misc import _boot_
+from PritiMusic.plugins.sudo.sudoers import sudoers_list
+from PritiMusic.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
@@ -20,36 +18,49 @@ from Clonify.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from Clonify.utils.decorators.language import LanguageStart
-from Clonify.utils.formatters import get_readable_time
-from Clonify.utils.inline import help_pannel, private_panel, start_panel
-from config import BANNED_USERS, STREAMI_PICS, GREET
+from PritiMusic.utils.decorators.language import LanguageStart
+from PritiMusic.utils.formatters import get_readable_time
+from PritiMusic.utils.inline import help_pannel, private_panel, start_panel
+from config import BANNED_USERS, START_IMG_URL, CMBOT
 from strings import get_string
 
+# Telegram Message Effect IDs
+EFFECT_ID = [
+    5046509860389126442,
+    5107584321108051014,
+    5104841245755180586,
+    5159385139981059251,
+]
 
 @app.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
 async def start_pm(client, message: Message, _):
 
-    loading_1 = await message.reply_text(random.choice(GREET))
+    loading_1 = await message.reply_text(random.choice(CMBOT))
     await add_served_user(message.from_user.id)
     
-    await loading_1.edit_text("<b>ʟᴏᴀᴅɪɴɢ</b>")
-    await asyncio.sleep(0.1)
-    await loading_1.edit_text("<b>ʟᴏᴀᴅɪɴɢ.</b>")
-    await asyncio.sleep(0.1)
-    await loading_1.edit_text("<b>ʟᴏᴀᴅɪɴɢ..</b>")
-    await asyncio.sleep(0.1)
-    await loading_1.edit_text("<b>ʟᴏᴀᴅɪɴɢ...</b>")
-    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>ᴌᴏᴀᴅɪɴɢ....</b>")
+    await asyncio.sleep(0.3)
+
+    await loading_1.edit_text("<b>ꜱᴛᴀʀᴛɪɴɢ..ʙᴀʙʏ.❤️❤️</b>")
+    await asyncio.sleep(0.3)
+
+    await loading_1.edit_text("<b>ɪ ᴀᴍ ᴀʟɪᴠᴇ ʙᴀʙʏ❤️😌🫣🫣</b>")
+    await asyncio.sleep(0.5)
+
+    await loading_1.edit_text("<b>ʙᴇᴛᴀ ʙᴏᴛs🫣🫣.</b>")
+    await asyncio.sleep(0.5)
+
     await loading_1.delete()
 
     if len(message.text.split()) > 1:
         name = message.text.split(None, 1)[1]
         if name[0:4] == "help":
             keyboard = help_pannel(_)
+            await app.send_chat_action(message.chat.id, ChatAction.TYPING)
+            await message.reply_sticker("CAACAgUAAxkBAAFJgZ1qBGwx9Z9vW5BhG3dw0l1A5j4CyQACXRYAAuc-wVWs4--9DGlDKzsE")
             return await message.reply_photo(
-                random.choice(STREAMI_PICS),
+                random.choice(START_IMG_URL),
                 caption=_["help_1"].format(config.SUPPORT_CHAT),
                 reply_markup=keyboard,
             )
@@ -101,7 +112,8 @@ async def start_pm(client, message: Message, _):
     else:
         out = private_panel(_)
         await message.reply_photo(
-            random.choice(STREAMI_PICS),
+            random.choice(START_IMG_URL),
+            message_effect_id=random.choice(EFFECT_ID),
             caption=_["start_2"].format(message.from_user.mention, app.mention),
             reply_markup=InlineKeyboardMarkup(out),
         )
@@ -118,7 +130,7 @@ async def start_gp(client, message: Message, _):
     out = start_panel(_)
     uptime = int(time.time() - _boot_)
     await message.reply_photo(
-        random.choice(STREAMI_PICS),
+        random.choice(START_IMG_URL),
         caption=_["start_1"].format(app.mention, get_readable_time(uptime)),
         reply_markup=InlineKeyboardMarkup(out),
     )
