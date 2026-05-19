@@ -7,10 +7,10 @@ from pyrogram.types import InlineKeyboardButton, InlineKeyboardMarkup, Message
 from py_yt import VideosSearch
 
 import config
-from PritiMusic import app
-from PritiMusic.misc import _boot_
-from PritiMusic.plugins.sudo.sudoers import sudoers_list
-from PritiMusic.utils.database import (
+from Clonify import app
+from Clonify.misc import _boot_
+from Clonify.plugins.sudo.sudoers import sudoers_list
+from Clonify.utils.database import (
     add_served_chat,
     add_served_user,
     blacklisted_chats,
@@ -18,9 +18,9 @@ from PritiMusic.utils.database import (
     is_banned_user,
     is_on_off,
 )
-from PritiMusic.utils.decorators.language import LanguageStart
-from PritiMusic.utils.formatters import get_readable_time
-from PritiMusic.utils.inline import help_pannel, private_panel, start_panel
+from Clonify.utils.decorators.language import LanguageStart
+from Clonify.utils.formatters import get_readable_time
+from Clonify.utils.inline import help_pannel, private_panel, start_panel
 from config import BANNED_USERS, START_IMG_URL, CMBOT
 from strings import get_string
 
