@@ -138,13 +138,11 @@ STREAMI_PICS = [
     "https://files.catbox.moe/ubyk6k.jpg",
 ]
 
+# Adding .split(",") to these fixes the "Failed to decode" errors!
+HELP_IMG_URL = getenv("HELP_IMG_URL", "https://files.catbox.moe/zbl2i7.jpg").split(",")
+START_IMG_URL = getenv("START_IMG_URL", "https://files.catbox.moe/n22tbs.jpg").split(",")
+PING_IMG_URL = getenv("PING_IMG_URL", "https://files.catbox.moe/n22tbs.jpg").split(",")
 
-HELP_IMG_URL = getenv(
-    "HELP_IMG_URL", "https://files.catbox.moe/zbl2i7.jpg"
-)
-
-START_IMG_URL = getenv("START_IMG_URL", "https://files.catbox.moe/n22tbs.jpg")
-PING_IMG_URL = getenv("PING_IMG_URL", "https://files.catbox.moe/n22tbs.jpg")
 PLAYLIST_IMG_URL = "https://files.catbox.moe/n22tbs.jpg"
 STATS_IMG_URL = "https://files.catbox.moe/n22tbs.jpg"
 TELEGRAM_AUDIO_URL = "https://files.catbox.moe/2y5o3g.jpg"
