@@ -15,13 +15,13 @@ API_HASH = getenv("API_HASH")
 BOT_TOKEN = getenv("BOT_TOKEN")
 BOT_ID = getenv("BOT_ID")
 # -------------------------------------------------------
-OWNER_USERNAME = getenv("OWNER_USERNAME","@II_NOBITA_DEFAULTERS_II")
+OWNER_USERNAME = getenv("OWNER_USERNAME","@sukoon_s")
 # --------------------------------------------------------
-BOT_USERNAME = getenv("BOT_USERNAME" , "NOBITA_MUSIC_TG_BOT")
+BOT_USERNAME = getenv("BOT_USERNAME" , "clone_MUSICrobot")
 # --------------------------------------------------------
-BOT_NAME = getenv("BOT_NAME" , "˹ 𝐍ᴏʙɪᴛᴀ ꭙ 𝐌ᴜsɪᴄ [2] ˼")
+BOT_NAME = getenv("BOT_NAME" , "˹ ASSISTANT ˼")
 # ---------------------------------------------------------
-ASSUSERNAME = getenv("ASSUSERNAME" , "NOBITA_MUSIC_TG_BOT")
+ASSUSERNAME = getenv("ASSUSERNAME" , "BETA_ASSISTANT2")
 # ---------------------------------------------------------
 
 
@@ -33,7 +33,7 @@ API_KEY = getenv("API_KEY")
 #---------------------------------------------------------------
 
 # ----------------------------------------------------------------
-DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 17000))
+DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 170000))
 # ----------------------------------------------------------------
 
 # ----------------------------------------------------------------
@@ -77,9 +77,9 @@ GIT_TOKEN = getenv(
 
 #------------------------------------------------------------------------
 # -------------------------------------------------------------------------
-SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/NOBITA_SUPP0RT")
-SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/+S0Q1-J_EQLA3YmU1")
-CHAT = getenv("CHAT", "https://t.me/+S0Q1-J_EQLA3YmU1")
+SUPPORT_CHANNEL = getenv("SUPPORT_CHANNEL", "https://t.me/BETABOT_HUB")
+SUPPORT_CHAT = getenv("SUPPORT_CHAT", "https://t.me/BETABOT_SUPPORT")
+CHAT = getenv("CHAT", "https://t.me/BETABOT_SUPPORT")
 # ------------------------------------------------------------------------------
 # -------------------------------------------------------------------------------
 
@@ -161,19 +161,19 @@ STREAMI_PICS = [
 
 
 HELP_IMG_URL = getenv(
-    "HELP_IMG_URL", "https://i.ibb.co/xPjc7tv/help-menu.jpg"
+    "HELP_IMG_URL", "https://files.catbox.moe/zbl2i7.jpg"
 )
 
-START_IMG_URL = getenv("START_IMG_URL", "https://files.catbox.moe/q8bej6.jpg")
-PING_IMG_URL = getenv("PING_IMG_URL", "https://files.catbox.moe/q8bej6.jpg")
-PLAYLIST_IMG_URL = "https://files.catbox.moe/f2s4ws.jpg"
-STATS_IMG_URL = "https://files.catbox.moe/q8bej6.jpg"
+START_IMG_URL = getenv("START_IMG_URL", "https://files.catbox.moe/n22tbs.jpg")
+PING_IMG_URL = getenv("PING_IMG_URL", "https://files.catbox.moe/n22tbs.jpg")
+PLAYLIST_IMG_URL = "https://files.catbox.moe/n22tbs.jpg"
+STATS_IMG_URL = "https://files.catbox.moe/n22tbs.jpg"
 TELEGRAM_AUDIO_URL = "https://files.catbox.moe/2y5o3g.jpg"
 TELEGRAM_VIDEO_URL = "https://files.catbox.moe/2y5o3g.jpg"
 STREAM_IMG_URL = "https://telegra.ph/file/d30d11c4365c025c25e3e.jpg"
 SOUNCLOUD_IMG_URL = "https://telegra.ph/file/d30d11c4365c025c25e3e.jpg"
 YOUTUBE_IMG_URL = "https://files.catbox.moe/2y5o3g.jpg"
-SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/2y5o3g.jpg"
+SPOTIFY_ARTIST_IMG_URL = "https://files.catbox.moe/n22tbs.jpg"
 SPOTIFY_ALBUM_IMG_URL = "https://files.catbox.moe/2y5o3g.jpg"
 SPOTIFY_PLAYLIST_IMG_URL = "https://telegra.ph/file/d30d11c4365c025c25e3e.jpg"
 
