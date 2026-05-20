@@ -32,8 +32,17 @@ from Clonify.utils.database.clonedb import get_owner_id_from_db, get_cloned_supp
 
 from Clonify.cplugin.setinfo import get_logging_status, get_log_channel
 
+# --- RANDOM STICKERS LIST ---
+# Yahan aap apne pasand ke aur bhi sticker IDs add kar sakte hain.
+RANDOM_STICKERS = [
+    "CAACAgUAAxkBAAFJgZ1qBGwx9Z9vW5BhG3dw0l1A5j4CyQACXRYAAuc-wVWs4--9DGlDKzsE",
+    "CAACAgUAAxkBAAFKHl9qDSvjGaSMG6TS76wNuIeo2oyzrAAC2gQAAsmEqVUTv53n2G5gFDsE",
+    "CAACAgUAAxkBAAFKHl1qDSved7Su7eGRs6a_kQRASF7eSwACGRgAAkjhiVQoZnAAAfPMfQE7BA",
+    "CAACAgQAAxkBAAFKHllqDSvVgtBMTpg8uBQqf1eAHFHP4AACBBIAAvAG2VFd6aEJ0tmFXDsE",
+    "CAACAgUAAxkBAAFJgZ1qBGwx9Z9vW5BhG3dw0l1A5j4CyQACXRYAAuc-wVWs4--9DGlDKzsE",
+    "CAACAgUAAxkBAAFJgZ9qBGw3JfuXSHzy2b6iDYQWZ2bQUQACLwUAAmZV0VZ9oUejPkLcOjsE",
+]
 #--------------------------
-
 
 @Client.on_message(filters.command(["start"]) & filters.private & ~BANNED_USERS)
 @LanguageStart
@@ -55,12 +64,15 @@ async def start_pm(client, message: Message, _):
     C_BOT_SUPPORT_CHANNEL = await get_cloned_support_channel(a.id)
     C_SUPPORT_CHANNEL = f"https://t.me/{C_BOT_SUPPORT_CHANNEL}"
     # await asyncio.sleep(0.1)
-    await loading_1.edit_text("<b>ʟᴏᴀᴅɪɴɢ..</b>")
-    await asyncio.sleep(0.1)
-    await loading_1.edit_text("<b>ʟᴏᴀᴅɪɴɢ...</b>")
-    await asyncio.sleep(0.1)
+    await loading_1.edit_text("<b>BABY....😁😘😘</b>")
+    await asyncio.sleep(0.4)
+    await loading_1.edit_text("<b>I AM ALIVE..😌😌.</b>")
+    await asyncio.sleep(0.3)
+    await loading_1.edit_text("<b>READY TO ROCKING BABY😌😌.</b>")
+    await asyncio.sleep(0.3)
+    await loading_1.edit_text("<b>BETA BOTS😆 .</b>")
+    await asyncio.sleep(0.4)
     await loading_1.delete()
-
 
     #Cloned Bot Support Chat and channel
 
@@ -131,6 +143,9 @@ async def start_pm(client, message: Message, _):
         app_name = app.name
         app_link = f"https://t.me/{app.username}"
 
+        # SENDING RANDOM STICKER BEFORE PHOTO
+        await message.reply_sticker(random.choice(RANDOM_STICKERS))
+
         # out = private_panel(_)
         await message.reply_photo(
             random.choice(STREAMI_PICS),
@@ -175,6 +190,10 @@ async def start_gp(client, message: Message, _):
                     ],
                 ]
     uptime = int(time.time() - _boot_)
+
+    # SENDING RANDOM STICKER BEFORE PHOTO IN GROUPS TOO
+    await message.reply_sticker(random.choice(RANDOM_STICKERS))
+
     await message.reply_photo(
         random.choice(STREAMI_PICS),
         caption=_["start_1"].format(a.mention, get_readable_time(uptime)),
