@@ -19,7 +19,7 @@ from typing import Dict, List, Union
 
 from Clonify import userbot
 from Clonify.core.mongo import mongodb, pymongodb
-from Clonify.utils.database.clonedb import get_owner_id_from_db, check_bot_premium
+from Clonify.utils.database.clonedb import get_owner_id_from_db
 from config import SUPPORT_CHAT, OWNER_ID
 
 authdb = mongodb.adminauth
@@ -150,24 +150,13 @@ async def broadcast_message(client, message, _):
     bot_id = bot.id
 
     # get owner info
-    C_OWNER = get_owner_id_from_db(bot_id)
+    C_OWNER = await get_owner_id_from_db(bot_id)
     OWNERS = [OWNER_ID, C_OWNER]
 
     if message.from_user.id not in OWNERS:
         return await message.reply_text(_["c_brod_1"].format(SUPPORT_CHAT))
 
     global IS_BROADCASTING
-
-    # Check if bot has premium
-    a = await client.get_me()
-    premium_status = check_bot_premium(a.id)
-    if premium_status is None:
-        return await message.reply_text("Bot ID not found!")
-    elif not premium_status:
-        if message.from_user.id != OWNER_ID:
-            return await message.reply_text("Premium not found!")
-        else:
-            pass
 
     # Get the message content
     if message.reply_to_message:
